@@ -15,22 +15,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light"
+      href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <div class="mycontainer">
-      <h1>Speech to text conversion using JavaScript</h1>
+    <div class="main-container">
+      <header>
+        <h1>Speech2Text</h1>
+      </header>
 
       <div class="mywebapp">
         <div class="input">
           <textarea id="textbox" rows="6"></textarea>
         </div>
-        <button id="start-btn" title="Start">Start</button>
-        <p id="instructions">Press the Start button</p>
+        <button class="circleScaleBtn" title="Start"><span>START</span></button>
+        <div id="instruction-box">
+          <p id="instructions">How to use</p>
+          <ul>
+            <li>Click Start</li>
+            <li>If prompted, allow access to your microphone</li>
+            <li>Start speaking!</li>
+          </ul>
+        </div>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -1,18 +1,63 @@
 body {
-  background: #1e2440;
-  color: #f2efe2;
+  background: hsl(185, 75%, 39%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arvo", serif;
   font-size: 16px;
+  margin: 0 auto;
+}
+
+.main-container {
+  border-radius: 15px;
+  box-shadow: gray 4px 4px 8px 6px;
+  max-width: 375px;
+  max-height: 675px;
+  width: 25vw;
+  height: 90%;
+  background: #f7f7f7eb;
+  padding: 80px 100px;
+  text-align: center;
+  margin-top: 2.5vh;
+}
+
+header {
+  border: 4px solid black;
+  width: 100%;
+  background: url("/assets/speech.png") fixed no-repeat;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  z-index: 3;
+}
+
+h1 {
+  color: #171616;
+  text-shadow: #57a7edaf 4px 2px 2px;
+  font-size: 50px;
+}
+
+#instruction-box {
+  display: flex;
+  flex-direction: column;
+  border: 0.25px solid #a9a9a9;
+  border-radius: 25px;
+}
+
+#instructions {
+  font-weight: bolder;
+}
+
+ul {
+  list-style-type: disc;
+  text-align: left;
+  line-height: 3vh;
 }
 
 button:focus {
   outline: 0;
-}
-
-.mycontainer {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 150px 100px;
-  text-align: center;
 }
 
 .mywebapp {
@@ -21,6 +66,49 @@ button:focus {
 
 #textbox {
   margin: 30px 0;
+  width: 100%;
+  height: 20vh;
+}
+
+.circleScaleBtn {
+  padding: 12px 24px;
+  background-color: hsl(222, 100%, 95%);
+  color: hsl(226, 80%, 62%);
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 2vh;
+}
+
+.circleScaleBtn span {
+  z-index: 1;
+  position: relative;
+}
+
+.circleScaleBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  background-color: hsl(226, 80%, 62%);
+  opacity: 0;
+}
+
+.circleScaleBtn:hover span {
+  color: hsl(222, 100%, 95%);
+}
+
+.circleScaleBtn:hover::before {
+  opacity: 1;
+  transition-duration: 0.85s;
+  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
 }
 
 @media (max-width: 768px) {
